@@ -1,0 +1,61 @@
+<main class="bg-black flex flex-col items-center justify-center min-h-screen">
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"
+    class="bg-white p-8 rounded-lg flex flex-col w-full max-w-md">
+    <div class="flex justify-center">
+      <h2 class="font-mono text-lg">Register</h2>
+    </div>
+
+    <div class="flex flex-col space-y-4">
+      <div class="flex flex-col">
+        <label for="name" class="text-black">Nombre<span class="text-red-500">*</span> </label>
+        <input type="name" id="name" formControlName="name" placeholder="Nombre"
+          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none"
+          (blur)="registerForm.get('name')?.markAsTouched()">
+        <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched"
+          class="text-red-500 text-xs mt-1">El nombre es obligatorio.</div>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="lastname" class="text-black">Apellido<span class="text-red-500">*</span> </label>
+        <input type="lastname" id="lastname" formControlName="lastname" placeholder="Apellido"
+          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none"
+          (blur)="registerForm.get('lastname')?.markAsTouched()">
+        <div class="text-red-500 text-xs mt-1"
+          *ngIf="registerForm.get('lastname')?.errors && registerForm.get('lastname')?.touched">El Apellido es
+          obligatorio.</div>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email" class="text-black">Correo electrónico <span class="text-red-500">*</span> </label>
+        <input type="email" id="email" formControlName="email" placeholder="Correo"
+          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none" (blur)="registerForm.get('email')?.markAsTouched()">
+        <div class="text-red-500 text-xs mt-1"
+          *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched">El correo es obligatorio.
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col relative">
+      <label for="password" class="text-black">Contraseña <span class="text-red-500">*</span> </label>
+      <input placeholder="Contraseña" type="{{ hidePassword ? 'password' : 'text' }}" id="password"
+        formControlName="password" required
+        class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none" (blur)="registerForm.get('password')?.markAsTouched()">
+      <div class="text-red-500 text-xs mt-1"
+        *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">la contraseña  es
+        obligatorio.</div>
+
+      <button (click)="togglePasswordVisibility()" type="button"
+        class="absolute top-1/2 transform -translate-y-1/2 right-0 mr-2">
+        <img src="./assets/svg/Eye.svg" alt="">
+      </button>
+    </div>
+
+
+    <button (click)="onSubmit()" class="bg-black text-white p-2 rounded cursor-pointer mt-4" type="button"
+      [disabled]="registerForm.invalid"  [ngClass]="{'bg-black text-white': registerForm.valid, 'bg-gray-400 text-gray-700 cursor-not-allowed': registerForm.invalid}">Registrarse</button>
+    <p>¿Tienes cuenta? <span routerLink="/auth/login" class="text-blue-500 cursor-pointer hover:underline">iniciar
+        sesión</span> </p>
+  </form>
+
+</main>

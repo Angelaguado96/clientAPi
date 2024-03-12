@@ -52,7 +52,10 @@
             Sponsors
           </li>
           <li>
-            <button routerLink="/register" class="flex text-black p-1.5 bg-white rounded  " >
+            <button (click)="SingOutButton()" class="bg-white">SignOut</button>
+          </li>
+          <li>
+            <button routerLink="auth/login" class="flex text-black p-1.5 bg-white rounded  " >
                 Sing In
               <img src="./assets/svg/Log_out.svg" alt="logout"  class="ml-2">
             </button>
@@ -65,5 +68,7 @@
     </div>
   </nav>
 
+ 
 
+  
 

@@ -1,0 +1,40 @@
+<main class="bg-black flex flex-col items-center justify-center min-h-screen">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="bg-white p-8 rounded-lg flex flex-col w-full max-w-md">
+    <button (click)="loginGoogle()"
+      class="text-black p-2 rounded border border-solid border-black mb-4 items-center flex justify-center"> <img
+        src="./assets/logo_google.png" class="w-6 m-1" alt="logo google">Google</button>
+    <button (click)="loginGithub()"
+      class="text-black p-2 rounded border border-solid border-black mb-4 items-center flex justify-center"> <img
+        src="./assets/svg/github.svg" class="w-6 m-1" alt="logo github ">Github</button>
+    <div class="flex justify-center items-center">
+      <div class="w-full border border-solid border-black m-4"></div>
+      <p>OR</p>
+      <div class="w-full border border-solid border-black m-4"></div>
+    </div>
+
+    <div class="flex flex-col space-y-4">
+      <div class="flex flex-col">
+        <label for="email" class="text-black">Correo electrónico <span class="text-red-500">*</span> </label>
+        <input type="email" formControlName="email" placeholder="Correo"
+         (blur)="loginForm.get('email')?.markAsTouched()"
+          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none">
+          <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="text-red-500 text-xs mt-1">el email es obligario</div>
+      </div>
+
+      <div class="flex flex-col relative">
+        <label for="password" class="text-black">Contraseña <span class="text-red-500">*</span> </label>
+        <input placeholder="Contraseña" type="{{ hidePassword ? 'password' : 'text' }}" formControlName="password"
+          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none" (blur)="loginForm.get('password')?.markAsTouched()">
+          <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="text-red-500 text-xs mt-1">la contraseña es obligario</div>
+        <button (click)="togglePasswordVisibility()" class="absolute top-1/2 transform -translate-y-1/2 right-0 mr-2">
+          <img src="./assets/svg/Eye.svg" alt="">
+        </button>
+      </div>
+    </div>
+
+    <button class="bg-black text-white p-2 rounded cursor-pointer mt-4" type="submit"
+      [disabled]="loginForm.invalid">Iniciar sesión</button>
+    <p>¿No tienes cuenta? <span routerLink="/auth/register"
+        class="text-blue-500 cursor-pointer hover:underline">Regístrate</span> </p>
+  </form>
+</main>
