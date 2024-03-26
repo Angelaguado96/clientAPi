@@ -1,74 +1,69 @@
+<main class="bg-black">
 
-<nav class="bg-white border-gray-200 dark:bg-black dark:border-black">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="./assets/Logo_Api.png" class="h-14" alt="Api_Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TusApis</span>
-      </a>
-
-      <!-- este es el el menu desplegable en responsive ↓ -->
-      <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <!-- este es el el menu desplegable en responsive ↑ -->
-
-      <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-black">
-
-          <li class="block py-2 flex px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-            Home
-          </li>
-
-          <!-- opciones desplegables ↓ -->
-          <li>
-              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-    </svg></button>
-              <!-- Dropdown menu -->
-              <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                    </li>
-                    <li>
-                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                    </li>
-                  </ul>
-                  <div class="py-1">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                  </div>
-              </div>
-          </li>
-           <!-- opciones desplegables ↑ -->
-
-          <li class="block py-2 flex px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-             
-            Sponsors
-          </li>
-          <li>
-            <button (click)="SingOutButton()" class="bg-white">SignOut</button>
-          </li>
-          <li>
-            <button routerLink="auth/login" class="flex text-black p-1.5 bg-white rounded  " >
-                Sing In
-              <img src="./assets/svg/Log_out.svg" alt="logout"  class="ml-2">
-            </button>
-          </li>
-          <li>
-           <!-- Item -->
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
  
 
-  
 
+  <section class="border border-solid border-white flex flex-col md:flex-row">
+
+    <article class="text-white w-full md:w-1/2">
+      presentacion
+    </article>
+    <!-- articule animation ↓ -->
+    <!-- <article class="border border-solid border-red-60 flex-col flex w-full md:w-1/2 justify-center items-center"> -->
+
+
+    <!-- animation number 1 ↓ -->
+
+    <!-- <div class="spinner">
+          <div class="spinner1"></div>
+        </div> -->
+
+
+    <!-- animation number 2 ↓ -->
+
+    <!-- <div class="loader">
+  <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+    <defs class="s-xJBuHA073rTt" xmlns="http://www.w3.org/2000/svg">
+      <linearGradient class="s-xJBuHA073rTt" gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+        <stop class="s-xJBuHA073rTt" stop-color="#973BED"></stop>
+        <stop class="s-xJBuHA073rTt" stop-color="#007CFF" offset="1"></stop>
+      </linearGradient>
+      <linearGradient class="s-xJBuHA073rTt" gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+        <stop class="s-xJBuHA073rTt" stop-color="#FFC800"></stop>
+        <stop class="s-xJBuHA073rTt" stop-color="#F0F" offset="1"></stop>
+        <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+      </linearGradient>
+      <linearGradient class="s-xJBuHA073rTt" gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+        <stop class="s-xJBuHA073rTt" stop-color="#00E0ED"></stop>
+        <stop class="s-xJBuHA073rTt" stop-color="#00DA72" offset="1"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 54.722656,3.9726563 A 2.0002,2.0002 0 0 0 54.941406,4 h 5.007813 C 58.955121,17.046124 49.099667,27.677057 36.121094,29.580078 a 2.0002,2.0002 0 0 0 -1.708985,1.978516 V 60 H 29.587891 V 31.558594 A 2.0002,2.0002 0 0 0 27.878906,29.580078 C 14.900333,27.677057 5.0448787,17.046124 4.0507812,4 H 9.28125 c 1.231666,11.63657 10.984383,20.554048 22.6875,20.734375 a 2.0002,2.0002 0 0 0 0.02344,0 c 11.806958,0.04283 21.70649,-9.003371 22.730469,-20.7617187 z" class="dash" id="y" pathLength="360"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="--rotation-duration:0ms; --rotation-direction:normal;" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="10" stroke="url(#c)" d="M 32 32
+        m 0 -27
+        a 27 27 0 1 1 0 54
+        a 27 27 0 1 1 0 -54" class="spin" id="o" pathLength="360"></path>
+  </svg>
+  <div class="w-2"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="--rotation-duration:0ms; --rotation-direction:normal;" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 4,4 h 4.6230469 v 25.919922 c -0.00276,11.916203 9.8364941,21.550422 21.7500001,21.296875 11.616666,-0.240651 21.014356,-9.63894 21.253906,-21.25586 a 2.0002,2.0002 0 0 0 0,-0.04102 V 4 H 56.25 v 25.919922 c 0,14.33873 -11.581192,25.919922 -25.919922,25.919922 a 2.0002,2.0002 0 0 0 -0.0293,0 C 15.812309,56.052941 3.998433,44.409961 4,29.919922 Z" class="dash" id="u" pathLength="360"></path>
+  </svg>
+</div> -->
+
+    <!-- animation number 3 ↓ -->
+
+
+    <!-- <div class="loadersr">
+      <div class="loader_cube loader_cube--color"></div>
+    </div> -->
+
+
+    <!-- </article> -->
+  </section>
+
+</main>

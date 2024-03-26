@@ -1,0 +1,127 @@
+<nav *ngIf="showNavbar" class="bg-white border-gray-200 dark:bg-black dark:border-black">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="./assets/Logo_Api.png" class="h-14" alt="Api_Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TusApis</span>
+      </a>
+
+      <!--  este es el boton del menu  desplegable en responsive ↓ -->
+      <button (click)="toggleMenu()" type="button"
+        class="btn-dropdown inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <!-- este es el boton del menu  desplegable en responsive ↑ -->
+
+      <!-- Opciones desplegables ↓ -->
+      <div [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen, 'transition-width': isMenuOpen}" id="navbar-dropdown"
+        id="menu" class="fixed inset-0 z-50 bg-black">
+
+        <div class="flex ">
+          <div class="w-1/4">
+            <button (click)="toggleMenu()" type="button"
+            class="btn-dropdown inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+            <img src="./assets/svg/Close.svg" alt="">
+          </button>
+          </div>
+          <div class="flex justify-start items-center w-3/4">
+            <img src="./assets/Logo_Api.png" class="h-14" alt="Api_Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TusApis</span>
+          </div>
+          
+        </div>
+
+        <button routerLink="auth/login" class="bg-gray-950 flex text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+            <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+          Sing In
+          <img src="./assets/svg/Log_out.svg" alt="logout" class="ml-2">
+        </button>
+
+
+        <form class="form">
+            <label for="search">
+                <input required="" autocomplete="off" placeholder="search" id="search" type="text" class="text-white" >
+                <div class="icon">
+                    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                    <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <button type="reset" class="close-btn">
+                    <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                        <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
+                      </svg>
+                      
+                </button>
+            </label>
+        </form>
+
+
+        <ul
+          class="flex flex-col font-medium p-4 md:p-0 mt-4  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-transparent md:bg-white space-y-4" >
+          <li>
+          </li>
+          <li class="text-white">
+            <button routerLink="/" class="items-center flex justify-center relative">
+              <img class="mr-2" src="./assets/svg/home.svg" alt="Home">
+              Home
+              <img src="./assets/svg/arrow.svg" alt="Right Arrow">
+            </button>
+          </li>
+          <li class="text-white">
+            <button routerLink="/" class="items-center flex justify-center relative">
+              <img class="mr-2" src="./assets/svg/Api.svg" alt="Home">
+             APIs ↓
+            </button>
+          </li>
+          <li class="text-white">
+            <button routerLink="Settings" class="items-center flex justify-center">
+              <img class="mr-2" src="./assets/svg/settings.svg" alt="">
+              Settings
+              <img src="./assets/svg/arrow.svg" alt="Right Arrow">
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- Fin de opciones desplegables ↑ -->
+
+      <!-- Este son las opciones normales ↓  -->
+      <div id="navbar-dropdown" class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+        <ul
+          class="flex items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-black">
+          <li>
+            <button
+            class="hover:text-white text-gray-400">
+                Home
+            </button>
+          </li>
+          <li>
+             <button
+             class="hover:text-white text-gray-400">
+                 Sponsors
+             </button>
+          </li>
+          <li>
+            <button (click)="SingOutButton()" class="bg-gray-950 text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>SignOut</button>
+          </li>
+          <li>
+            <button routerLink="auth/login" class="bg-gray-950 flex text-gray-400 border border-gray-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+                <span class="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+              Sing In
+              <img src="./assets/svg/Log_out.svg" alt="logout" class="ml-2">
+            </button>
+          </li>
+          <li>
+            <!-- Item -->
+          </li>
+        </ul>
+      </div>
+      <!-- Este son las opciones normales ↑  -->
+    </div>
+  </nav>

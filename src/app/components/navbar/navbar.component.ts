@@ -4,19 +4,22 @@ import { LocalStorageService } from 'src/app/service/LocalStorage.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HomeComponent {
+export class NavbarComponent {
   constructor(private userService: UserService, private router: Router, private localStorage: LocalStorageService) {}
-  showArrow :boolean=false;
+  
   user: any;
+  showNavbar: boolean = true;
 
   ngOnInit(): void {
     this.user = this.localStorage.getItem();
+    this.router.events.subscribe(() => {
+      this.showNavbar = !this.router.url.includes('auth/register') && !this.router.url.includes('auth/login');
+    });
   }
- 
   SingOutButton() {
     this.userService.logout()
       .then(response => {

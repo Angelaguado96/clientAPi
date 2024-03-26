@@ -9,13 +9,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import { NavbarComponent } from './components/navbar/navbar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,11 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     FormsModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp({"projectId":"project-api-2-cfcb9","appId":"1:891710377401:web:cd3a232e7ca1595dbdfa68","storageBucket":"project-api-2-cfcb9.appspot.com","apiKey":"AIzaSyD5eQueoBt6zjGcx0kLau2fcuVraIVLpjM","authDomain":"project-api-2-cfcb9.firebaseapp.com","messagingSenderId":"891710377401"})),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    BrowserAnimationsModule,
+    MatMenuModule
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

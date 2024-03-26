@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { _countGroupLabelsBeforeOption } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/service/LocalStorage.service';
 import { UserService } from 'src/app/service/user.service';
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
   }
@@ -40,7 +41,7 @@ export class LoginComponent implements OnInit {
   loginGoogle(){
     this.userService.LoginWithGoogle().then(Response => {
       console.log(Response.user);
-      this.LocalStorage.setItem('user',Response)
+      this.LocalStorage.setItem(Response)
       this.router.navigate(['/'])
     }).catch(error => console.log(error))
   }
@@ -48,7 +49,7 @@ export class LoginComponent implements OnInit {
   loginGithub(){
     this.userService.loginWithGithub()
     .then(Response=>{console.log(Response)
-      this.LocalStorage.setItem('user',Response)
+      this.LocalStorage.setItem(Response)
       this.router.navigate(['/'])
     })
     .catch(error=>console.log(error))

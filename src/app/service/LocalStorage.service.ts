@@ -7,17 +7,18 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
    
     constructor() { }
-    setItem(key:string,value:any):void{
-        localStorage.setItem(key,JSON.stringify(value))
+
+    setItem( value: any): void {
+        localStorage.setItem('userdata', JSON.stringify(value));
     }
-    getItem(key: string): any {
-        const item = localStorage.getItem(key);
-        console.log(item)
-        try {
-          return item ? JSON.parse(item) : null;
-        } catch (error) {
-          return console.error('Error al parsear el valor del LocalStorage:', error);
-          
+
+    getItem(): any {
+        const item: string | null = localStorage.getItem('userdata');
+        if (item !== null) {
+            return JSON.parse(item);
+        } else {
+            console.log('No se encontró ningún valor almacenado con la clave especificada.');
+            return null; 
         }
     }      
 

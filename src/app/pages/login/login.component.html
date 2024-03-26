@@ -15,9 +15,14 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <label for="email" class="text-black">Correo electrónico <span class="text-red-500">*</span> </label>
-        <input type="email" formControlName="email" placeholder="Correo"
+        <input 
+        type="email" 
+        formControlName="email"
+         placeholder="Correo"
          (blur)="loginForm.get('email')?.markAsTouched()"
-          class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none">
+        class="border-b border-gray-400 focus:border-black focus:translate-y-1 outline-none"
+        >
+          >
           <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="text-red-500 text-xs mt-1">el email es obligario</div>
       </div>
 
